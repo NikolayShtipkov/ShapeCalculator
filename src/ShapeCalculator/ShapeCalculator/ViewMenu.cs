@@ -9,7 +9,8 @@ namespace ShapeCalculator
             RenderMenu();
 
             string choice = Console.ReadLine();
-            switch(choice)
+            Console.WriteLine();
+            switch (choice)
             {
                 case "1":
                     CircleInput();
@@ -18,6 +19,7 @@ namespace ShapeCalculator
                     SquareInput();
                     return false;
                 case "3":
+                    TriangleInput();
                     return false;
                 case "4":
                     return true;
@@ -39,7 +41,7 @@ namespace ShapeCalculator
 
         private bool CircleInput()
         {
-            Console.Write("What is the radius: ");
+            Console.Write("What is the radius of the circle: ");
             var input = Console.ReadLine();
             Console.WriteLine();
 
@@ -65,7 +67,7 @@ namespace ShapeCalculator
 
         private bool SquareInput()
         {
-            Console.Write("What is the length: ");
+            Console.Write("What is the length of the sqare: ");
             var input = Console.ReadLine();
             Console.WriteLine();
 
@@ -91,7 +93,7 @@ namespace ShapeCalculator
 
         private bool TriangleInput()
         {
-            Console.Write("What is the length: ");
+            Console.Write("What is the length of the triangle: ");
             var input = Console.ReadLine();
             Console.WriteLine();
 
@@ -105,7 +107,7 @@ namespace ShapeCalculator
                 return true;
             }
 
-            Square square = new Square(length);
+            Triangle square = new Triangle(length);
             double area = square.GetArea();
             double circumference = square.GetCircumference();
 
