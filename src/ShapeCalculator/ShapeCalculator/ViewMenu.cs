@@ -15,6 +15,7 @@ namespace ShapeCalculator
                     CircleInput();
                     return false;
                 case "2":
+                    SquareInput();
                     return false;
                 case "3":
                     return false;
@@ -57,7 +58,59 @@ namespace ShapeCalculator
             double circumference = circle.GetCircumference();
 
             Console.WriteLine("Area: " + Math.Round(area, 2));
-            Console.WriteLine("Circumference: " + Math.Round(circumference, 2));
+            Console.WriteLine("Circumference: " + Math.Round(circumference, 2) + "\n");
+
+            return true;
+        }
+
+        private bool SquareInput()
+        {
+            Console.Write("What is the length: ");
+            var input = Console.ReadLine();
+            Console.WriteLine();
+
+            double length = 0;
+
+            bool isNumber = double.TryParse(input, out length);
+            if (!isNumber)
+            {
+                Console.WriteLine("Invalid Input\n");
+
+                return true;
+            }
+
+            Square square = new Square(length);
+            double area = square.GetArea();
+            double circumference = square.GetCircumference();
+
+            Console.WriteLine("Area: " + Math.Round(area, 2));
+            Console.WriteLine("Circumference: " + Math.Round(circumference, 2) + "\n");
+
+            return true;
+        }
+
+        private bool TriangleInput()
+        {
+            Console.Write("What is the length: ");
+            var input = Console.ReadLine();
+            Console.WriteLine();
+
+            double length = 0;
+
+            bool isNumber = double.TryParse(input, out length);
+            if (!isNumber)
+            {
+                Console.WriteLine("Invalid Input\n");
+
+                return true;
+            }
+
+            Square square = new Square(length);
+            double area = square.GetArea();
+            double circumference = square.GetCircumference();
+
+            Console.WriteLine("Area: " + Math.Round(area, 2));
+            Console.WriteLine("Circumference: " + Math.Round(circumference, 2) + "\n");
 
             return true;
         }
